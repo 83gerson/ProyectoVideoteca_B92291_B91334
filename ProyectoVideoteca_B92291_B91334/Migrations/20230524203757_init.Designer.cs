@@ -9,10 +9,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Dotnet6MvcLogin.Migrations
+namespace ProyectoVideoteca_B92291_B91334.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20230509025203_init")]
+    [Migration("20230524203757_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

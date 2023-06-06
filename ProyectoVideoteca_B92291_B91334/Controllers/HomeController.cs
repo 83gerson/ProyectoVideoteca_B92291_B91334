@@ -1,8 +1,8 @@
-﻿using Dotnet6MvcLogin.Models;
+﻿using ProyectoVideoteca_B92291_B91334.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Dotnet6MvcLogin.Controllers
+namespace ProyectoVideoteca_B92291_B91334.Controllers
 {
     public class HomeController : Controller
     {

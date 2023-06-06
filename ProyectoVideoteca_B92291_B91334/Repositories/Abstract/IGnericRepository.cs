@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Security.Principal;
 
-namespace Dotnet6MvcLogin.Repositories.Abstract
+namespace ProyectoVideoteca_B92291_B91334.Repositories.Abstract
 {
     public interface IBaseRepository<T>
     {

@@ -1,6 +1,6 @@
-using Dotnet6MvcLogin.Models.Domain;
-using Dotnet6MvcLogin.Repositories.Abstract;
-using Dotnet6MvcLogin.Repositories.Implementation;
+using ProyectoVideoteca_B92291_B91334.Models.Domain;
+using ProyectoVideoteca_B92291_B91334.Repositories.Abstract;
+using ProyectoVideoteca_B92291_B91334.Repositories.Implementation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -39,6 +39,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=UserAuthentication}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

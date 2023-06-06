@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dotnet6MvcLogin.Controllers
+namespace ProyectoVideoteca_B92291_B91334.Controllers
 {
     [Authorize(Roles ="admin")]
     public class AdminController : Controller

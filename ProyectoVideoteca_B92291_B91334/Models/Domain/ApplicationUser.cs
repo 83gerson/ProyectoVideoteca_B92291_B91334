@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace Dotnet6MvcLogin.Models.Domain
+namespace ProyectoVideoteca_B92291_B91334.Models.Domain
 {
     public class ApplicationUser:IdentityUser
     {

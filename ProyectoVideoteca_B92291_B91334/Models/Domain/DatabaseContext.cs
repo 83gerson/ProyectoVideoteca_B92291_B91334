@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Dotnet6MvcLogin.Models.Domain
+namespace ProyectoVideoteca_B92291_B91334.Models.Domain
 {
     public class DatabaseContext : IdentityDbContext<ApplicationUser>
     {

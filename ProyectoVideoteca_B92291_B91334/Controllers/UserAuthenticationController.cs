@@ -31,6 +31,16 @@ namespace ProyectoVideoteca_B92291_B91334.Controllers
             {
                 return RedirectToAction("Display", "Admin");
             }
+            else if (result.StatusCode == 1 && User.IsInRole("user"))
+            {
+
+                return RedirectToAction("Index", "User");
+
+            }
+            else if (result.StatusCode == 1 && User.IsInRole("user"))
+            {
+                return RedirectToAction("Index", "SuperAdmin");
+            }
             else
             {
                 TempData["msg"] = result.Message;

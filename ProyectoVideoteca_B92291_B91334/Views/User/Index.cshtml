@@ -1,0 +1,16 @@
+﻿@{
+    string username = User.Identity.Name;
+}
+
+<h1>Bienvenido a VIDEOTECA</h1>
+
+@if (Model != null)
+{
+    <p>¡Hola, @username! Gracias por unirte a nuestra videoteca.</p>
+    <p>Esperamos que disfrutes de nuestro amplio catálogo de películas y series.</p>
+}
+else
+{
+    <p>¡Bienvenido a VIDEOTECA! Por favor, inicia sesión para acceder a nuestro contenido.</p>
+    <p>Si aún no tienes una cuenta, puedes registrarte <a href="/Registro">aquí</a>.</p>
+}

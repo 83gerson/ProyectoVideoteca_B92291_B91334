@@ -26,9 +26,10 @@ namespace ProyectoVideoteca_B92291_B91334.Controllers
             if (!ModelState.IsValid)
                 return View(model);
             var result = await _authService.LoginAsync(model);
-            if(result.StatusCode==1)
+
+            if(result.StatusCode==1 && User.IsInRole("admin"))
             {
-                return RedirectToAction("Display", "Dashboard");
+                return RedirectToAction("Display", "Admin");
             }
             else
             {
@@ -46,7 +47,7 @@ namespace ProyectoVideoteca_B92291_B91334.Controllers
         public async Task<IActionResult> Registration(RegistrationModel model)
         {
             if(!ModelState.IsValid) { return View(model); }
-            model.Role = "user";
+            model.Role = "admin";
             var result = await this._authService.RegisterAsync(model);
             TempData["msg"] = result.Message;
             return RedirectToAction(nameof(Registration));

@@ -18,21 +18,30 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-
+            <ul class="nav navbar-nav">
                 @if (User.IsInRole("admin"))
                 {
                     <li><a href="/Admin/Display">Admin Page</a></li>
-
                 }
+
+                @if (User.IsInRole("user"))
+                {
+                    <li><a href="/User/Index">User Page</a></li>
+                }
+
+                @if (User.IsInRole("superadmin"))
+                {
+                    <li><a href="/UserAuthentication/RegisterAdmin">Register Admin</a></li>
+                }
+
                 @if (!string.IsNullOrEmpty(User.Identity.Name))
                 {
-                    <li><a href="/UserAuthentication/ChangePassword">ChangePassword</a></li>
+                    <li><a href="/UserAuthentication/ChangePassword">Change Password</a></li>
                     <li><a href="/UserAuthentication/Logout">Logout</a></li>
                 }
             </ul>
         </div>
     </nav>
-
 
     <div class="container">
         @RenderBody()

@@ -26,9 +26,10 @@ namespace Dotnet6MvcLogin.Controllers
             if (!ModelState.IsValid)
                 return View(model);
             var result = await _authService.LoginAsync(model);
-            if(result.StatusCode==1)
+
+            if(result.StatusCode==1 && User.IsInRole("admin"))
             {
-                return RedirectToAction("Display", "Dashboard");
+                return RedirectToAction("Display", "Admin");
             }
             else
             {

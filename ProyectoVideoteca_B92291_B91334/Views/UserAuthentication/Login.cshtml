@@ -1,86 +1,88 @@
-﻿@model Dotnet6MvcLogin.Models.DTO.LoginModel
+﻿@model ProyectoVideoteca_B92291_B91334.Models.DTO.LoginModel
 @{
     Layout = null;
 }
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">	
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>login</title>
-        
-<style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
 
-form {
-  border: 3px solid #f1f1f1;
-  width:60%;
-  margin:auto;
-  margin-top:10%;
-}
+    <style>
+        form {
+            border: 3px solid #f1f1f1;
+            width: 60%;
+            margin: auto;
+            margin-top: 10%;
+        }
 
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
 
-button {
-  background-color: #aa048b;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
+        button {
+            background-color: #aa048b;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
 
-.container {
-  padding: 16px;
-}
+        .container {
+            padding: 16px;
+        }
 
-.msg{
-  padding: 0px;
-}
+        .msg {
+            padding: 0px;
+        }
 
+        .err {
+            color: red;
+        }
 
-.err{
-    color:red;
-}
-</style>
- 
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-	
-<form asp-action="Login" method="post">
-  
-  <div class="container">
-    <label asp-for="Username"><b>Username</b></label>
-    <input type="text" asp-for="Username" placeholder="Enter Username">
+    <h1>Bienvenido al sistema de inicio de sesión</h1>
+
+    <form asp-action="Login" method="post">
+        <div class="container">
+            <label asp-for="Username"><b>Usuario</b></label>
+            <input type="text" asp-for="Username" placeholder="Ingrese el usuario">
             <div class="msg">
-            <span class="err" asp-validation-for="Username"></span>
+                <span class="err" asp-validation-for="Username"></span>
             </div>
 
-            
-
-    <label asp-for="Password"><b>Password</b></label>
-   <input  type="password" asp-for="Password" placeholder="Enter Password">
+            <label asp-for="Password"><b>Contraseña</b></label>
+            <input type="password" asp-for="Password" placeholder="Ingrese la contraseña">
             <div class="msg">
-            <span asp-validation-for="Password" class="err"></span>
+                <span asp-validation-for="Password" class="err"></span>
             </div>
 
-
-    @if(TempData["msg"]!=null){
+            @if (TempData["msg"] != null)
+            {
                 <div class="msg">@TempData["msg"]</div>
-    }
+            }
 
-    <button type="submit">Login</button>
-    <a class="text-alert" href="/UserAuthentication/Registration">Not a user? Signup</a>
-  </div>
-</form>
+            <button type="submit">Iniciar sesión</button>
+            <br>
+            <a class="text-alert" href="/UserAuthentication/Registration">Registrarse</a>
+            <br>
+            <a href="/" class="btn-back">Inicio</a>
+        </div>
+    </form>
 
 </body>
 </html>

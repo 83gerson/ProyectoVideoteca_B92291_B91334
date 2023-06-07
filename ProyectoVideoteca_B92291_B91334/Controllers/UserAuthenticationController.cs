@@ -1,9 +1,9 @@
-﻿using Dotnet6MvcLogin.Models.DTO;
-using Dotnet6MvcLogin.Repositories.Abstract;
+﻿using ProyectoVideoteca_B92291_B91334.Models.DTO;
+using ProyectoVideoteca_B92291_B91334.Repositories.Abstract;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Dotnet6MvcLogin.Controllers
+namespace ProyectoVideoteca_B92291_B91334.Controllers
 {
     public class UserAuthenticationController : Controller
     {

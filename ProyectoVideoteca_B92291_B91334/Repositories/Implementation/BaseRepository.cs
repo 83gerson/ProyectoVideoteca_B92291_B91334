@@ -1,9 +1,9 @@
-﻿using Dotnet6MvcLogin.Models.Domain;
-using Dotnet6MvcLogin.Repositories.Abstract;
+﻿using ProyectoVideoteca_B92291_B91334.Models.Domain;
+using ProyectoVideoteca_B92291_B91334.Repositories.Abstract;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Dotnet6MvcLogin.Repositories.Implementation
+namespace ProyectoVideoteca_B92291_B91334.Repositories.Implementation
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {

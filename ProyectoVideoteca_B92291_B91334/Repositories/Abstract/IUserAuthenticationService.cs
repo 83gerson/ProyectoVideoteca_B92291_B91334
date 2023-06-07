@@ -1,6 +1,6 @@
-﻿using Dotnet6MvcLogin.Models.DTO;
+﻿using ProyectoVideoteca_B92291_B91334.Models.DTO;
 
-namespace Dotnet6MvcLogin.Repositories.Abstract
+namespace ProyectoVideoteca_B92291_B91334.Repositories.Abstract
 {
     public interface IUserAuthenticationService
     {

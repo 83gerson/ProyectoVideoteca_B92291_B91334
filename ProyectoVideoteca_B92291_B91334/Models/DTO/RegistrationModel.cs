@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Dotnet6MvcLogin.Models.DTO
+namespace ProyectoVideoteca_B92291_B91334.Models.DTO
 {
     public class RegistrationModel
     {

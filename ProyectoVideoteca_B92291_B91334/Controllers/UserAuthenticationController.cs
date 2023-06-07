@@ -37,7 +37,7 @@ namespace ProyectoVideoteca_B92291_B91334.Controllers
                 return RedirectToAction("Index", "User");
 
             }
-            else if (result.StatusCode == 1 && User.IsInRole("user"))
+            else if (result.StatusCode == 1 && User.IsInRole("superadmin"))
             {
                 return RedirectToAction("Index", "SuperAdmin");
             }
@@ -69,6 +69,29 @@ namespace ProyectoVideoteca_B92291_B91334.Controllers
             await this._authService.LogoutAsync();  
             return RedirectToAction(nameof(Login));
         }
+
+        [Authorize(Roles = "superadmin")]
+        public IActionResult RegisterAdmin()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "superadmin")]
+        public async Task<IActionResult> RegisterAdmin(RegistrationModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            model.Role = "admin";
+            var result = await this._authService.RegisterAsync(model);
+            TempData["msg"] = result.Message;
+
+            return RedirectToAction(nameof(RegisterAdmin));
+        }
+
         //[AllowAnonymous]
         //public async Task<IActionResult> RegisterAdmin()
         //{

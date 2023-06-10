@@ -2,8 +2,9 @@
 {
     public class MoviesAndSeriesActors
     {
-      public int movies_series_id { get; set; }
-
-       public int actor_id { get; set; }
+        public int movies_series_id { get; set; }
+        public int actor_id { get; set; }
+        public MoviesAndSeries MovieAndSeries { get; set; }
+        public Actors Actor { get; set; }
     }
 }

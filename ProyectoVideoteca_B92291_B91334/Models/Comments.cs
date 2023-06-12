@@ -2,13 +2,13 @@
 {
     public class Comments
     {
-
         public int comment_id { get; set; }
         public string comment { get; set; }
-        public int movie_series_id { get; set;}
-
+        public int movie_series_id { get; set; }
         public int user_id { get; set; }
 
-
+        public MoviesAndSeries MovieAndSeries { get; set; }
+        public User User { get; set; }
     }
+
 }

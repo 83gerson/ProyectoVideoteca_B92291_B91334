@@ -2,5 +2,9 @@
 {
     public class Genres
     {
+        public int Id { get; set; }
+        public string genre_name { get; set; }
+
+        public List<MoviesAndSeriesGenres> MovieAndSeriesGenres { get; set; }
     }
 }

@@ -10,5 +10,9 @@ namespace ProyectoVideoteca_B92291_B91334.Controllers
         {
             return View();
         }
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

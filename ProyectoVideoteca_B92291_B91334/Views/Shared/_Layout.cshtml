@@ -19,25 +19,20 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <ul class="nav navbar-nav">
-                @if (User.IsInRole("admin"))
-                {
-                    <li><a href="/Admin/Display">Admin Page</a></li>
-                }
-
-                @if (User.IsInRole("user"))
+                @if (User.Identity.IsAuthenticated)
                 {
                     <li><a href="/User/Index">User Page</a></li>
+                    <li><a href="/UserAuthentication/ChangePassword">Change Password</a></li>
+                    <li><a href="/UserAuthentication/Logout">Logout</a></li>
+                }
+                else
+                {
+                    <li><a href="/UserAuthentication/Login">Login</a></li>
                 }
 
                 @if (User.IsInRole("superadmin"))
                 {
                     <li><a href="/UserAuthentication/RegisterAdmin">Register Admin</a></li>
-                }
-
-                @if (!string.IsNullOrEmpty(User.Identity.Name))
-                {
-                    <li><a href="/UserAuthentication/ChangePassword">Change Password</a></li>
-                    <li><a href="/UserAuthentication/Logout">Logout</a></li>
                 }
             </ul>
         </div>
@@ -46,5 +41,8 @@
     <div class="container">
         @RenderBody()
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

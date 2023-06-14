@@ -6,7 +6,7 @@ namespace ProyectoVideoteca_B92291_B91334.DATA
     public class UCRTextContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<Actors> Actors { get; set; }
+        public DbSet<Actors> Actors { get; set;}
         public DbSet<Comments> Comments { get; set; }
         public DbSet<Episodes> Episodes { get; set; }
         public DbSet<MoviesAndSeries> MoviesAndSeries { get; set; }
@@ -16,7 +16,7 @@ namespace ProyectoVideoteca_B92291_B91334.DATA
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=LAPTOP-HQR4548J;Database=B91334;TrustServerCertificate=True;User Id=sa;Password=dylan2604;");
+            optionsBuilder.UseSqlServer("Server=LAPTOP-HQR4548J;Database=videotecalenguajes;TrustServerCertificate=True;User Id=sa;Password=dylan2604;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

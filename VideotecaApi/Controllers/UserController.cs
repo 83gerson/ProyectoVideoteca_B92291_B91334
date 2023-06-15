@@ -9,18 +9,67 @@ namespace VideotecaApi.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly UCRTextContext _context;
+        private readonly UCRTextContext _context= new UCRTextContext();
 
-        public UserController(UCRTextContext context)
+        // GET api/user
+        [HttpGet]
+        public IActionResult GetUsers()
         {
-            _context = context;
+            var users = _context.Users.ToList();
+            return Ok(users);
         }
 
-        [HttpGet("user")]
-        public IActionResult GetUser()
+        // GET api/user/{username}
+        [HttpGet("{username}")]
+        public IActionResult GetUser(string username)
         {
-            return Ok();
+            var user = _context.Users.Find(username);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return Ok(user);
         }
 
+        // POST api/user
+        [HttpPost]
+        public IActionResult CreateUser(User user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(GetUser), new { username = user.Username }, user);
+        }
+
+        // PUT api/user/{username}
+        [HttpPut("{username}")]
+        public IActionResult UpdateUser(string username, User updatedUser)
+        {
+            var user = _context.Users.Find(username);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.Password = updatedUser.Password;
+            user.ImageUrl = updatedUser.ImageUrl;
+
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        // DELETE api/user/{username}
+        [HttpDelete("{username}")]
+        public IActionResult DeleteUser(string username)
+        {
+            var user = _context.Users.Find(username);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }

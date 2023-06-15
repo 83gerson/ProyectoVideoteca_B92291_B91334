@@ -51,10 +51,6 @@ namespace ProyectoVideoteca_B92291_B91334.Data
                 .WithMany(ms => ms.Comments)
                 .HasForeignKey(c => c.movie_series_id);
 
-            modelBuilder.Entity<Comments>()
-                .HasOne(c => c.User)
-                .WithMany(u => u.Comments)
-                .HasForeignKey(c => c.user_id);
 
             modelBuilder.Entity<Ratings>()
                 .HasKey(r => r.rating_id);
@@ -64,10 +60,7 @@ namespace ProyectoVideoteca_B92291_B91334.Data
                 .WithMany(ms => ms.Ratings)
                 .HasForeignKey(r => r.movie_series_id);
 
-            modelBuilder.Entity<Ratings>()
-                .HasOne(r => r.User)
-                .WithMany(u => u.Ratings)
-                .HasForeignKey(r => r.user_id);
+
 
             modelBuilder.Entity<Episodes>()
                 .HasKey(e => e.episode_id);
@@ -87,7 +80,7 @@ namespace ProyectoVideoteca_B92291_B91334.Data
                 .HasKey(ms => ms.id);
 
             modelBuilder.Entity<User>()
-                .HasKey(u => u.user_id);
+                .HasKey(u => u.Username);
 
             base.OnModelCreating(modelBuilder);
         }

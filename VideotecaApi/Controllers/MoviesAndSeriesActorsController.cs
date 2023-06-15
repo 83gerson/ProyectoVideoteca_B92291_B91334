@@ -9,18 +9,35 @@ namespace VideotecaApi.Controllers
     [ApiController]
     public class MoviesAndSeriesActorsController : ControllerBase
     {
-        private readonly UCRTextContext _context;
+        private readonly UCRTextContext _context = new UCRTextContext();
 
-        public MoviesAndSeriesActorsController(UCRTextContext context)
-        {
-            _context = context;
-        }
-
+        // GET api/moviesAndSeriesActor/moviesAndSeriesActors
         [HttpGet("moviesAndSeriesActors")]
         public IActionResult GetMoviesAndSeriesActors()
         {
-            return Ok();
+            var moviesAndSeriesActors = _context.MoviesAndSeriesActors.ToList();
+            return Ok(moviesAndSeriesActors);
         }
 
+        // GET api/moviesAndSeriesActors/{id}
+        [HttpGet("{id}")]
+        public IActionResult GetMoviesAndSeriesActors(int id)
+        {
+            var moviesAndSeriesActors = _context.MoviesAndSeriesActors.Find(id);
+            if (moviesAndSeriesActors == null)
+            {
+                return NotFound();
+            }
+            return Ok(moviesAndSeriesActors);
+        }
+
+        // POST api/moviesAndSeriesActors
+        [HttpPost]
+        public IActionResult CreateMoviesAndSeriesActors([FromBody] MoviesAndSeriesActors moviesAndSeriesActors)
+        {
+            _context.MoviesAndSeriesActors.Add(moviesAndSeriesActors);
+            _context.SaveChanges();
+            return CreatedAtAction(nameof(GetMoviesAndSeriesActors), new { id = moviesAndSeriesActors.movies_series_id }, moviesAndSeriesActors);
+        }
     }
 }

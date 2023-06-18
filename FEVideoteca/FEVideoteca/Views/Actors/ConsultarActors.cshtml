@@ -1,0 +1,46 @@
+﻿@model IEnumerable<FEVideoteca.Models.Actors>
+
+@{
+    ViewData["Title"] = "ConsultarActors";
+}
+
+<h1>ConsultarActors</h1>
+
+<p>
+    <a asp-action="CreateActors" asp-controller="Actors" class="btn bg-info">Nuevo Actor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActorFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ActorLastName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ActorLastName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditActors", new { id=item.Id, actorfirstname=item.ActorFirstName,actorlastname=item.ActorLastName}) |
+                    @Html.ActionLink("Delete", "EliminarActors", new {id=item.Id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

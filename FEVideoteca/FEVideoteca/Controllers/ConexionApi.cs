@@ -102,5 +102,61 @@ namespace FEVideoteca.Controllers
         }
 
         #endregion
+
+        #region Comments
+
+        public async Task<bool> AgregarComments(Comments P_entidad)
+        {
+
+            string rutaApi = "api/Comments/AgregarComments";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+
+
+        }
+
+        public async Task<List<Comments>> ConsultarComments(Comments P_Entidad)
+        {
+            List<Comments> lstComments = new List<Comments>();
+
+            string rutaApi = "api/Actors/ConsultarActors";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+            if (resultadoConsumo.IsSuccessStatusCode)
+            {
+                string jsonString = await resultadoConsumo.Content.ReadAsStringAsync();
+                lstComments = JsonConvert.DeserializeObject<List<Comments>>(jsonString);
+
+            }
+            return lstComments;
+
+        }
+
+
+        public async Task<bool> ModificarComments(Comments P_Entidad)
+        {
+
+            string rutaApi = "api/Comments/ModificarComments";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+
+
+        }
+
+        public async Task<bool> EliminarComments(Comments P_entidad)
+        {
+
+            string rutaApi = "api/Comments/EliminarComments";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+
+
+        }
+
+        #endregion
+
+
     }
 }

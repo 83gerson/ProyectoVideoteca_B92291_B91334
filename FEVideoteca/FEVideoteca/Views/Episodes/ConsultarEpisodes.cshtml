@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FEVideoteca.Models.Episodes>
+
+@{
+    ViewData["Title"] = "ConsultarEpisodes";
+}
+
+<h1>ConsultarEpisodes</h1>
+
+<p>
+    <a asp-action="CreateEpisodes" asp-controller="Episodes" class="btn bg-info">Agregar Episodio</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EpisodeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tittle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EpisodeNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MoviesSeriesId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EpisodeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tittle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EpisodeNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoviesSeriesId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.EpisodeId, tittle=item.Tittle }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

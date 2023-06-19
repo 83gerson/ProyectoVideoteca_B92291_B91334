@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FEVideoteca.Models.Users>
+
+@{
+    ViewData["Title"] = "ConsultarUsers";
+}
+
+<h1>ConsultarUsers</h1>
+
+<p>
+    <a asp-action="CreateUsers" asp-controller="Users" class="btn bg-info">Nuevo User</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImageUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { username=item.Username,imageurl=item.ImageUrl,password=item.Password,role=item.Role}) |
+                @Html.ActionLink("Delete", "Delete", new { username=item.Username })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -17,7 +17,6 @@ namespace FEVideoteca.Controllers
 
         #endregion
 
-
         #region Constructor de conexión
 
         public ConexionApi() {
@@ -31,7 +30,6 @@ namespace FEVideoteca.Controllers
 
 
         #endregion
-
 
         #region Parametros de Conexion Api
 
@@ -358,7 +356,7 @@ namespace FEVideoteca.Controllers
             return resultadoConsumo.IsSuccessStatusCode;
         }
 
-        public async Task<List<Users>> ConsultarRatings(Users P_Entidad)
+        public async Task<List<Users>> ConsultarUsers(Users P_Entidad)
         {
             List<Users> lstComments = new List<Users>();
 

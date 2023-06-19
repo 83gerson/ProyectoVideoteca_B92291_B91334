@@ -120,7 +120,7 @@ namespace FEVideoteca.Controllers
         {
             List<Comments> lstComments = new List<Comments>();
 
-            string rutaApi = "api/Actors/ConsultarActors";
+            string rutaApi = "api/Comments/ConsultarComments";
             HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
             if (resultadoConsumo.IsSuccessStatusCode)
             {
@@ -157,6 +157,54 @@ namespace FEVideoteca.Controllers
 
         #endregion
 
+        #region Episodes
+
+        public async Task<bool> AgregarEpisodes(Episodes P_entidad)
+        {
+
+            string rutaApi = "api/Episodes/AgregarEpisodes";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<List<Episodes>> ConsultarEpisodes(Episodes P_Entidad)
+        {
+            List<Episodes> lstComments = new List<Episodes>();
+
+            string rutaApi = "api/Episodes/ConsultarEpisodes";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+            if (resultadoConsumo.IsSuccessStatusCode)
+            {
+                string jsonString = await resultadoConsumo.Content.ReadAsStringAsync();
+                lstComments = JsonConvert.DeserializeObject<List<Episodes>>(jsonString);
+
+            }
+            return lstComments;
+
+        }
+
+
+        public async Task<bool> ModificarEpisodes(Episodes P_Entidad)
+        {
+
+            string rutaApi = "api/Episodes/ModificarEpisodes";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> EliminarEpisodes(Episodes P_entidad)
+        {
+
+            string rutaApi = "api/Episodes/EliminarEpisodes";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        #endregion
+         
 
     }
 }

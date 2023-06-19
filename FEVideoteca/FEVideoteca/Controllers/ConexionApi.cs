@@ -204,7 +204,195 @@ namespace FEVideoteca.Controllers
         }
 
         #endregion
-         
+
+        #region MoviesAndSeries
+
+        public async Task<bool> AgregarMovies(MoviesAndSeries P_entidad)
+        {
+
+            string rutaApi = "api/MoviesAndSeries/AgregarMovies";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<List<MoviesAndSeries>> ConsultarMovies(MoviesAndSeries P_Entidad)
+        {
+            List<MoviesAndSeries> lstComments = new List<MoviesAndSeries>();
+
+            string rutaApi = "api/MoviesAndSeries/ConsultarMovies";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+            if (resultadoConsumo.IsSuccessStatusCode)
+            {
+                string jsonString = await resultadoConsumo.Content.ReadAsStringAsync();
+                lstComments = JsonConvert.DeserializeObject<List<MoviesAndSeries>>(jsonString);
+
+            }
+            return lstComments;
+
+        }
+
+
+        public async Task<bool> ModificarMovies(MoviesAndSeries P_Entidad)
+        {
+
+            string rutaApi = "api/MoviesAndSeries/ModificarMovies";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> EliminarMovies(MoviesAndSeries P_entidad)
+        {
+
+            string rutaApi = "api/MoviesAndSeries/EliminarMovies";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        #endregion
+
+        #region MoviesAndSeriesActors
+
+        public async Task<bool> AgregarMoviesAndSeriesActors(MoviesAndSeriesActors P_entidad)
+        {
+
+            string rutaApi = "api/MoviesAndSeriesActors/AgregarMoviesAndSeriesActors";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<List<MoviesAndSeriesActors>> ConsultarMoviesAndSeriesActors(MoviesAndSeriesActors P_Entidad)
+        {
+            List<MoviesAndSeriesActors> lstComments = new List<MoviesAndSeriesActors>();
+
+            string rutaApi = "api/MoviesAndSeriesActors/ConsultarMoviesAndSeriesActors";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+            if (resultadoConsumo.IsSuccessStatusCode)
+            {
+                string jsonString = await resultadoConsumo.Content.ReadAsStringAsync();
+                lstComments = JsonConvert.DeserializeObject<List<MoviesAndSeriesActors>>(jsonString);
+
+            }
+            return lstComments;
+
+        }
+
+
+        public async Task<bool> ModificarMoviesAndActor(MoviesAndSeriesActors P_Entidad)
+        {
+
+            string rutaApi = "api/MoviesAndSeriesActors/ModificarMoviesAndActor";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> EliminarMoviesAndActors(MoviesAndSeriesActors P_entidad)
+        {
+
+            string rutaApi = "api/MoviesAndSeriesActors/EliminarMoviesAndActors";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+        #endregion
+
+        #region Ratings
+
+        public async Task<bool> AgregarRatings(Ratings P_entidad)
+        {
+
+            string rutaApi = "api/Ratings/AgregarRatings";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<List<Ratings>> ConsultarRatings(Ratings P_Entidad)
+        {
+            List<Ratings> lstComments = new List<Ratings>();
+
+            string rutaApi = "api/Ratings/ConsultarRatings";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+            if (resultadoConsumo.IsSuccessStatusCode)
+            {
+                string jsonString = await resultadoConsumo.Content.ReadAsStringAsync();
+                lstComments = JsonConvert.DeserializeObject<List<Ratings>>(jsonString);
+
+            }
+            return lstComments;
+
+        }
+
+
+        public async Task<bool> ModificarRatings(Ratings P_Entidad)
+        {
+
+            string rutaApi = "api/Ratings/ModificarRatings";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> EliminarRatings(Ratings P_entidad)
+        {
+
+            string rutaApi = "api/Ratings/EliminarRatings";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+        #endregion
+
+        #region Users
+
+        public async Task<bool> AgregarUsers(Users P_entidad)
+        {
+
+            string rutaApi = "api/Users/AgregarUsers";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<List<Users>> ConsultarRatings(Users P_Entidad)
+        {
+            List<Users> lstComments = new List<Users>();
+
+            string rutaApi = "api/Users/ConsultarUsers";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+            if (resultadoConsumo.IsSuccessStatusCode)
+            {
+                string jsonString = await resultadoConsumo.Content.ReadAsStringAsync();
+                lstComments = JsonConvert.DeserializeObject<List<Users>>(jsonString);
+
+            }
+            return lstComments;
+
+        }
+
+
+        public async Task<bool> ModificarUsers(Users P_Entidad)
+        {
+
+            string rutaApi = "api/Users/ModificarUsers";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_Entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> EliminarUsers(Users P_entidad)
+        {
+
+            string rutaApi = "api/Users/EliminarUsers";
+            HttpResponseMessage resultadoConsumo = await conexionCliente.PostAsJsonAsync(rutaApi, P_entidad);
+
+            return resultadoConsumo.IsSuccessStatusCode;
+        }
+        #endregion
 
     }
 }

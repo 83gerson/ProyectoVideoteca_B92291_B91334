@@ -33,7 +33,7 @@ namespace FEVideoteca.Controllers
 
         }
 
-        public IActionResult EditMovies(int id, string tittle, string duration, string episodeduration, string director,string genre,string numepisodes
+        public IActionResult EditMovies(int id, string duration, string episodeduration, string director,string genre,string numepisodes
                                         ,string numseasons,int releaseyear,string synopsis,string title )
         {
             //Se hace porque ya tenemos los datos listados

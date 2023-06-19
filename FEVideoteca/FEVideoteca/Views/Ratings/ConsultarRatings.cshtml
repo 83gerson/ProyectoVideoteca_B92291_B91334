@@ -1,0 +1,52 @@
+﻿@model IEnumerable<FEVideoteca.Models.Ratings>
+
+@{
+    ViewData["Title"] = "ConsultarRatings";
+}
+
+<h1>ConsultarRatings</h1>
+
+<p>
+    <a asp-action="CreateRatings" asp-controller="Ratings" class="btn bg-info">Nuevo Actor</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RatingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MovieSeriesId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RatingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieSeriesId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new {id=item.RatingId, rating=item.Rating, username=item.Username, moviesandseriesid=item.MovieSeriesId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.RatingId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

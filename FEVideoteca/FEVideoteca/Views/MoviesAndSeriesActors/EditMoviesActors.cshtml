@@ -1,0 +1,43 @@
+﻿@model FEVideoteca.Models.MoviesAndSeriesActors
+
+@{
+    ViewData["Title"] = "EditMoviesActors";
+}
+
+<h1>EditMoviesActors</h1>
+
+<h4>MoviesAndSeriesActors</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditMoviesActors">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoviesSeriesId" class="control-label"></label>
+                <input asp-for="MoviesSeriesId" class="form-control" />
+                <span asp-validation-for="MoviesSeriesId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ActorId" class="control-label"></label>
+                <input asp-for="ActorId" class="form-control" />
+                <span asp-validation-for="ActorId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ConsultarMoviesActors" asp-controller="MoviesAndSeriesActors">Volver a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -5,7 +5,7 @@ namespace FEVideoteca.Controllers
 {
     public class CommentsController : Controller
     {
-        public IActionResult CreateActors()
+        public IActionResult CreateComments()
         {
             return View();
         }

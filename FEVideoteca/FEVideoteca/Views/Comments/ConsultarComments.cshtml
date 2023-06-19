@@ -25,7 +25,7 @@
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
             <th></th>
-        </tr>
+        </tr>=
     </thead>
     <tbody>
 @foreach (var item in Model) {
@@ -43,9 +43,8 @@
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { id= item.CommentId, comment=item.Comment,username=item.UserName, moviesandseriesid=item.MovieSeriesId}) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.CommentId})
             </td>
         </tr>
 }

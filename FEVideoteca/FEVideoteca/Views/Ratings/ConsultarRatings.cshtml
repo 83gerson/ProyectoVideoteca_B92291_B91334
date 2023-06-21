@@ -44,7 +44,7 @@
             </td>
             <td>
                     @Html.ActionLink("Edit", "Edit", new {id=item.RatingId, rating=item.Rating, username=item.Username, moviesandseriesid=item.MovieSeriesId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.RatingId })
+                    @Html.ActionLink("Delete", "EliminarRatings", new { id=item.RatingId })
             </td>
         </tr>
 }

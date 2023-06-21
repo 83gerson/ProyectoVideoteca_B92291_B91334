@@ -44,7 +44,7 @@
             </td>
             <td>
                     @Html.ActionLink("Edit", "Edit", new { username=item.Username,imageurl=item.ImageUrl,password=item.Password,role=item.Role}) |
-                @Html.ActionLink("Delete", "Delete", new { username=item.Username })
+                    @Html.ActionLink("Delete", "EliminarUsers", new { username=item.Username })
             </td>
         </tr>
 }

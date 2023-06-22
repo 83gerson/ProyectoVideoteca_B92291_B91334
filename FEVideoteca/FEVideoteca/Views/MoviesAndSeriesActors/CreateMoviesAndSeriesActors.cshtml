@@ -1,30 +1,30 @@
 ﻿@model FEVideoteca.Models.MoviesAndSeriesActors
 
 @{
-    ViewData["Title"] = "CreateMoviesActors";
+    ViewData["Title"] = "CreateMoviesAndSeriesActors";
 }
 
-<h1>CreateMoviesActors</h1>
+<h1>CreateMoviesAndSeriesActors</h1>
 
 <h4>MoviesAndSeriesActors</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CreateMoviesActors" asp-controller="MoviesAndeSeriesActors" method="post">
+        <form asp-action="AgregarMoviesAndSeriesActors" asp-controller="MoviesAndSeriesActors" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Id" class="control-label"></label>
-                <input asp-for="Id" class="form-control" required />
+                <input asp-for="Id" class="form-control" />
                 <span asp-validation-for="Id" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="MoviesSeriesId" class="control-label"></label>
-                <input asp-for="MoviesSeriesId" class="form-control" required />
+                <input asp-for="MoviesSeriesId" class="form-control" />
                 <span asp-validation-for="MoviesSeriesId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ActorId" class="control-label"></label>
-                <input asp-for="ActorId" class="form-control" required/>
+                <input asp-for="ActorId" class="form-control" />
                 <span asp-validation-for="ActorId" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -35,9 +35,6 @@
 </div>
 
 <div>
-    <a asp-action="ConsultarMoviesActors" asp-controller="MoviesAndSeriesActors">Volver a la lista</a>
+    <a asp-action="ConsultarMoviesAndSeriesActors">Volver a la lista</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

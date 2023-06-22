@@ -362,6 +362,7 @@ namespace AccesoDatos
                         {
                             MoviesAndSeries r = new MoviesAndSeries
                             {
+                                Id=item.Id,
                                 Director = item.Director,
                                 Genre = item.Genre,
                                 Duration = item.Duration,
@@ -388,6 +389,7 @@ namespace AccesoDatos
                         {
                             MoviesAndSeries r = new MoviesAndSeries
                             {
+                                Id= item.Id,
                                 Director = item.Director,
                                 Genre = item.Genre,
                                 Duration = item.Duration,
@@ -418,6 +420,7 @@ namespace AccesoDatos
                                     select reg).FirstOrDefault();
                     if (consulta != null)
                     {
+                        consulta.Id= P_Entidad.Id;
                         consulta.Title = P_Entidad.Title;
                         consulta.ReleaseYear = P_Entidad.ReleaseYear;
                         consulta.Synopsis = P_Entidad.Synopsis;

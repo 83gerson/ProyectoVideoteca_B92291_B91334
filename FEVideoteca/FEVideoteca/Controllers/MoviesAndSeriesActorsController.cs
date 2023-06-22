@@ -5,7 +5,7 @@ namespace FEVideoteca.Controllers
 {
     public class MoviesAndSeriesActorsController : Controller
     {
-        public IActionResult CreateMoviesAndActors()
+        public IActionResult CreateMoviesAndSeriesActors()
         {
             return View();
         }
@@ -29,7 +29,7 @@ namespace FEVideoteca.Controllers
 
             await objetoConexion.AgregarMoviesAndSeriesActors(P_Entidad);
 
-            return RedirectToAction("ConsultarMoviesAndSeriesActors", "MoviesAndActors");
+            return RedirectToAction("ConsultarMoviesAndSeriesActors", "MoviesAndSeriesActors");
 
         }
 
@@ -55,7 +55,7 @@ namespace FEVideoteca.Controllers
 
             await objetoConexion.ModificarMoviesAndActor(P_Entidad);
 
-            return RedirectToAction("ConsultarMoviesAndActors", "MoviesAndActors");
+            return RedirectToAction("ConsultarMoviesAndSeriesActors", "MoviesAndSeriesActors");
 
         }
 
@@ -66,7 +66,7 @@ namespace FEVideoteca.Controllers
 
             await objetoConexion.EliminarMoviesAndActors(new MoviesAndSeriesActors { Id = id });
 
-            return RedirectToAction("ConsultarMoviesAndActors", "MoviesAndActors");
+            return RedirectToAction("ConsultarMoviesAndSeriesActors", "MoviesAndSeriesActors");
 
         }
     }

@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<FEVideoteca.Models.MoviesAndSeries>
 
 @{
-    ViewData["Title"] = "ConsultarMovies";
+    ViewData["Title"] = "ConsultarMoviesAndSeries";
 }
 
-<h1>ConsultarMovies</h1>
+<h1>ConsultarMoviesAndSeries</h1>
 
 <p>
-    <a asp-action="CreateMovies" asp-controller="MoviesAndSeries" class="btn bg-info">Crear Película </a>
+    <a asp-action="CreateMoviesAndSeries" asp-controller="MoviesAndSeries">Create New</a>
 </p>
 <table class="table">
     <thead>
@@ -25,7 +25,7 @@
                 @Html.DisplayNameFor(model => model.ReleaseYear)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Duration)
+                <label>ImageUrl</label>
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Director)
@@ -81,7 +81,7 @@
             <td>
                 @Html.ActionLink("Edit", "EditMovies", new {id=item.Id, duration=item.Duration, episodeduration=item.EpisodeDuration, director=item.Director,
                     genre=item.Genre, numepisodes=item.NumEpisodes, numseasons=item.NumSeasons, releaseyear=item.ReleaseYear,synopsis=item.Synopsis, title=item.Title }) |
-                @Html.ActionLink("Delete", "DeleteMovies", new { id=item.Id})
+                    @Html.ActionLink("Delete", "EliminarMovies", new { id=item.Id})
             </td>
         </tr>
 }

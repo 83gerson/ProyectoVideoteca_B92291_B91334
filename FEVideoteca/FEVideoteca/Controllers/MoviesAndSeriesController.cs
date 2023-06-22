@@ -5,13 +5,13 @@ namespace FEVideoteca.Controllers
 {
     public class MoviesAndSeriesController : Controller
     {
-        public IActionResult CreateMovies()
+        public IActionResult CreateMoviesAndSeries()
         {
             return View();
         }
 
 
-        public async Task<IActionResult> ConsultarMovies()
+        public async Task<IActionResult> ConsultarMoviesAndSeries()
         {
 
             ConexionApi objetoConexion = new ConexionApi();
@@ -29,7 +29,7 @@ namespace FEVideoteca.Controllers
 
             await objetoConexion.AgregarMovies(P_Entidad);
 
-            return RedirectToAction("ConsultarMovies", "Movies");
+            return RedirectToAction("ConsultarMoviesAndSeries", "MoviesAndSeries");
 
         }
 
@@ -63,7 +63,7 @@ namespace FEVideoteca.Controllers
 
             await objetoConexion.ModificarMovies(P_Entidad);
 
-            return RedirectToAction("ConsultarMovies", "MoviesAndSeries");
+            return RedirectToAction("ConsultarMoviesAndSeries", "MoviesAndSeries");
 
         }
 
@@ -74,7 +74,7 @@ namespace FEVideoteca.Controllers
 
             await objetoConexion.EliminarMovies(new MoviesAndSeries { Id = id });
 
-            return RedirectToAction("ConsultarMovies", "MoviesAndSeries");
+            return RedirectToAction("ConsultarMoviesAndSeries", "MoviesAndSeries");
 
         }
     }

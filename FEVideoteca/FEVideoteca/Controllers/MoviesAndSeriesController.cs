@@ -10,6 +10,28 @@ namespace FEVideoteca.Controllers
             return View();
         }
 
+        public async Task<IActionResult> PeliculasDetalles(int id)
+        {
+            ConexionApi objetoConexion = new ConexionApi();
+
+            List<MoviesAndSeries> lst = await objetoConexion.ConsultarMovies(new MoviesAndSeries());
+
+            List<MoviesAndSeries> lst1 = new List<MoviesAndSeries>();
+
+            lst1.Add(lst.FirstOrDefault(o => o.Id == id));
+
+            return View(lst.FirstOrDefault(o => o.Id == id));
+        }
+
+        public async Task<IActionResult> CarouselPeliculas()
+        {
+            ConexionApi objetoConexion = new ConexionApi();
+
+            List<MoviesAndSeries> lst = await objetoConexion.ConsultarMovies(new MoviesAndSeries());
+
+            return View(lst);
+        }
+
 
         public async Task<IActionResult> ConsultarMoviesAndSeries()
         {

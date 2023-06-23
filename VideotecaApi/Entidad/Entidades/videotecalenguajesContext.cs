@@ -28,7 +28,7 @@ namespace Entidad.Entidades
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=LAPTOP-HQR4548J;Initial Catalog=videotecalenguajes;TrustServerCertificate=true;user id=sa; password=dylan2604;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-N2FI4RE;Initial Catalog=videotecalenguajes;TrustServerCertificate=true;user id=sa; password=sa123456;");
             }
         }
 

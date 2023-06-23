@@ -4,6 +4,8 @@ using Negocio;
 
 namespace WebApi.Controllers
 {
+    [Route("api/Episodes")]
+    [ApiController]
     public class EpisodesController : Controller
     {
         private readonly INegocioSQL _inegocioSQL;

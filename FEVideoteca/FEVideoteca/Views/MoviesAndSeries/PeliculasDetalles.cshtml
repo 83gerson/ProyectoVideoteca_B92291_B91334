@@ -1,0 +1,38 @@
+﻿@model FEVideoteca.Models.MoviesAndSeries
+
+@{
+    ViewData["Title"] = "CarouselPeliculas";
+}
+<style>
+
+    body {
+        background-color: #7BA7F2;
+        color: #000;
+    }
+
+</style>
+
+<h1>Peliculas</h1>
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="/MoviesAndSeries/PeliculasDetalles/@Model.Id">
+                <img src="@Model.Duration" class="imag int-left" width="200" height="200">
+            </a>
+            <h3>@Model.Title</h3>
+            <p>@Model.Synopsis</p>
+            <p><strong>Release Year:</strong> @Model.ReleaseYear</p>
+            <p><strong>Duration:</strong> @Model.Duration</p>
+            <p><strong>Director:</strong> @Model.Director</p>
+            <p><strong>Genre:</strong> @Model.Genre</p>
+            <p><strong>Num Seasons:</strong> @Model.NumSeasons</p>
+            <p><strong>Num Episodes:</strong> @Model.NumEpisodes</p>
+            <p><strong>Episode Duration:</strong> @Model.EpisodeDuration</p>
+        </div>
+    </div>
+</div>
